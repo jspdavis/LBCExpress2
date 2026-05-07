@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+
+    <!-- LBC Brand Colors -->
+    <color name="lbc_red">#CC0000</color>
+    <color name="lbc_red_dark">#990000</color>
+    <color name="lbc_yellow">#FFD700</color>
+    <color name="lbc_yellow_dark">#FFC200</color>
+    <color name="lbc_gray_light">#F5F5F5</color>
+    <color name="lbc_gray">#9E9E9E</color>
+    <color name="lbc_gray_dark">#424242</color>
+    <color name="lbc_text_primary">#212121</color>
+    <color name="lbc_text_secondary">#757575</color>
+    <color name="lbc_divider">#E0E0E0</color>
+    <color name="lbc_card_bg">#FFFFFF</color>
+    <color name="lbc_bg">#F8F8F8</color>
+    <color name="lbc_green">#2E7D32</color>
+    <color name="lbc_orange">#E65100</color>
+</resources>
