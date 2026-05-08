@@ -1,0 +1,247 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/lbc_bg"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/lbc_red"
+        android:elevation="4dp"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:padding="12dp">
+
+        <ImageButton
+            android:id="@+id/tvBack"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_marginEnd="4dp"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:contentDescription="Back"
+            android:src="@drawable/ic_arrow_back"
+            android:tint="@color/white" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="LBC"
+            android:textColor="@color/white"
+            android:textSize="18sp"
+            android:textStyle="bold" />
+
+    </LinearLayout>
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="16dp">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="Booking Confirmation"
+                android:textColor="@color/lbc_text_primary"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:layout_marginBottom="4dp"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="Kindly review the summary details below before placing your order."
+                android:textColor="@color/lbc_text_secondary"
+                android:textSize="12sp"
+                android:layout_marginBottom="16dp"/>
+
+            <!-- Sender Card -->
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="12dp"
+                app:cardCornerRadius="10dp"
+                app:cardElevation="3dp">
+
+                <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                    android:orientation="vertical" android:padding="14dp">
+
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                        android:text="Sender" android:textColor="@color/lbc_text_primary"
+                        android:textSize="14sp" android:textStyle="bold" android:layout_marginBottom="8dp"/>
+
+                    <TextView android:id="@+id/tvSenderName"
+                        android:layout_width="wrap_content" android:layout_height="wrap_content"
+                        android:textColor="@color/lbc_text_primary" android:textSize="14sp" android:textStyle="bold"/>
+                    <TextView android:id="@+id/tvSenderPhone"
+                        android:layout_width="wrap_content" android:layout_height="wrap_content"
+                        android:textColor="@color/lbc_text_secondary" android:textSize="12sp"/>
+                    <TextView android:id="@+id/tvSenderLocation"
+                        android:layout_width="wrap_content" android:layout_height="wrap_content"
+                        android:textColor="@color/lbc_text_secondary" android:textSize="12sp"/>
+                    <TextView android:id="@+id/tvSenderBranch"
+                        android:layout_width="wrap_content" android:layout_height="wrap_content"
+                        android:textColor="@color/lbc_red" android:textSize="12sp" android:textStyle="bold"
+                        android:layout_marginTop="4dp"/>
+
+                    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                        android:background="@drawable/bg_info_red" android:orientation="vertical"
+                        android:padding="10dp" android:layout_marginTop="8dp">
+                        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                            android:text="Drop off your package at the selected branch before"
+                            android:textColor="#721c24" android:textSize="11sp"/>
+                        <TextView android:id="@+id/tvDropoffDeadline"
+                            android:layout_width="wrap_content" android:layout_height="wrap_content"
+                            android:textColor="@color/lbc_red" android:textSize="12sp" android:textStyle="bold"/>
+                    </LinearLayout>
+
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <!-- Receiver Card -->
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="12dp"
+                app:cardCornerRadius="10dp"
+                app:cardElevation="3dp">
+
+                <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                    android:orientation="vertical" android:padding="14dp">
+
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                        android:text="Receiver" android:textColor="@color/lbc_text_primary"
+                        android:textSize="14sp" android:textStyle="bold" android:layout_marginBottom="8dp"/>
+
+                    <TextView android:id="@+id/tvReceiverName"
+                        android:layout_width="wrap_content" android:layout_height="wrap_content"
+                        android:textColor="@color/lbc_text_primary" android:textSize="14sp" android:textStyle="bold"/>
+                    <TextView android:id="@+id/tvReceiverPhone"
+                        android:layout_width="wrap_content" android:layout_height="wrap_content"
+                        android:textColor="@color/lbc_text_secondary" android:textSize="12sp"/>
+                    <TextView android:id="@+id/tvReceiverDestination"
+                        android:layout_width="wrap_content" android:layout_height="wrap_content"
+                        android:textColor="@color/lbc_text_secondary" android:textSize="12sp"
+                        android:textStyle="bold" android:layout_marginTop="2dp"/>
+
+                    <TextView android:id="@+id/tvDeliveryNote"
+                        android:layout_width="match_parent" android:layout_height="wrap_content"
+                        android:background="@drawable/bg_info_gray" android:padding="10dp"
+                        android:textColor="@color/lbc_text_secondary" android:textSize="11sp"
+                        android:layout_marginTop="8dp"/>
+
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <!-- Package + Payment Card -->
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="16dp"
+                app:cardCornerRadius="10dp"
+                app:cardElevation="3dp">
+
+                <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                    android:orientation="vertical" android:padding="14dp">
+
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                        android:text="Package" android:textColor="@color/lbc_text_primary"
+                        android:textSize="14sp" android:textStyle="bold" android:layout_marginBottom="8dp"/>
+
+                    <TextView android:id="@+id/tvItemName"
+                        android:layout_width="wrap_content" android:layout_height="wrap_content"
+                        android:textColor="@color/lbc_text_secondary" android:textSize="13sp"/>
+                    <TextView android:id="@+id/tvItemValue"
+                        android:layout_width="wrap_content" android:layout_height="wrap_content"
+                        android:textColor="@color/lbc_text_secondary" android:textSize="13sp"/>
+                    <TextView android:id="@+id/tvPackageType"
+                        android:layout_width="wrap_content" android:layout_height="wrap_content"
+                        android:textColor="@color/lbc_text_secondary" android:textSize="13sp"
+                        android:layout_marginBottom="12dp"/>
+
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                        android:text="Payment" android:textColor="@color/lbc_text_primary"
+                        android:textSize="14sp" android:textStyle="bold" android:layout_marginBottom="8dp"/>
+
+                    <TextView android:layout_width="match_parent" android:layout_height="wrap_content"
+                        android:background="@drawable/border_rounded" android:gravity="center"
+                        android:padding="10dp" android:text="💳  Cash"
+                        android:textColor="@color/lbc_text_primary" android:textSize="13sp"
+                        android:textStyle="bold" android:layout_marginBottom="12dp"/>
+
+                    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                        android:orientation="horizontal" android:layout_marginBottom="4dp">
+                        <TextView android:layout_width="0dp" android:layout_height="wrap_content"
+                            android:layout_weight="1" android:text="Shipping Fee"
+                            android:textColor="@color/lbc_text_secondary" android:textSize="13sp"/>
+                        <TextView android:id="@+id/tvShippingFee"
+                            android:layout_width="wrap_content" android:layout_height="wrap_content"
+                            android:textColor="@color/lbc_text_secondary" android:textSize="13sp"/>
+                    </LinearLayout>
+
+                    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                        android:orientation="horizontal" android:layout_marginBottom="10dp">
+                        <TextView android:layout_width="0dp" android:layout_height="wrap_content"
+                            android:layout_weight="1" android:text="Valuation Fee"
+                            android:textColor="@color/lbc_text_secondary" android:textSize="13sp"/>
+                        <TextView android:id="@+id/tvValuationFee"
+                            android:layout_width="wrap_content" android:layout_height="wrap_content"
+                            android:textColor="@color/lbc_text_secondary" android:textSize="13sp"/>
+                    </LinearLayout>
+
+                    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                        android:background="@drawable/bg_total" android:orientation="horizontal"
+                        android:padding="10dp">
+                        <TextView android:layout_width="0dp" android:layout_height="wrap_content"
+                            android:layout_weight="1" android:text="Total Fee"
+                            android:textColor="@color/lbc_text_primary" android:textSize="14sp"
+                            android:textStyle="bold"/>
+                        <TextView android:id="@+id/tvTotalFee"
+                            android:layout_width="wrap_content" android:layout_height="wrap_content"
+                            android:textColor="@color/lbc_red" android:textSize="14sp" android:textStyle="bold"/>
+                    </LinearLayout>
+
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <!-- Terms checkbox -->
+            <CheckBox android:id="@+id/cbTerms"
+                android:layout_width="match_parent" android:layout_height="wrap_content"
+                android:layout_marginBottom="16dp"
+                android:buttonTint="@color/lbc_red"
+                android:text="I have read and agree to the Terms of Service."
+                android:textColor="@color/lbc_text_secondary" android:textSize="13sp"/>
+
+            <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                android:orientation="horizontal">
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btnBack"
+                    style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+                    android:layout_width="0dp" android:layout_height="wrap_content"
+                    android:layout_marginEnd="8dp" android:layout_weight="1"
+                    android:padding="14dp" android:text="Back"
+                    android:textColor="@color/lbc_red"
+                    app:cornerRadius="8dp" app:strokeColor="@color/lbc_red"/>
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btnBookNow"
+                    android:layout_width="0dp" android:layout_height="wrap_content"
+                    android:layout_weight="1" android:backgroundTint="@color/lbc_red"
+                    android:padding="14dp" android:text="Book Now"
+                    android:textColor="@color/white" android:textStyle="bold"
+                    app:cornerRadius="8dp"/>
+            </LinearLayout>
+
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+
+</LinearLayout>

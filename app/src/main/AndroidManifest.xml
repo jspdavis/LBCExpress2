@@ -3,7 +3,6 @@
     xmlns:tools="http://schemas.android.com/tools">
 
     <uses-permission android:name="android.permission.INTERNET" />
-    <uses-permission android:name="android.permission.CALL_PHONE" />
 
     <application
         android:allowBackup="true"
@@ -14,6 +13,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.LBCExpress3"
+        android:usesCleartextTraffic="true"
         tools:targetApi="31">
 
         <activity
@@ -25,25 +25,19 @@
             </intent-filter>
         </activity>
 
-        <activity
-            android:name=".TrackingActivity"
-            android:exported="false"
-            android:parentActivityName=".MainActivity" />
-
-        <activity
-            android:name=".ServicesActivity"
-            android:exported="false"
-            android:parentActivityName=".MainActivity" />
-
-        <activity
-            android:name=".BranchesActivity"
-            android:exported="false"
-            android:parentActivityName=".MainActivity" />
-
-        <activity
-            android:name=".ContactActivity"
-            android:exported="false"
-            android:parentActivityName=".MainActivity" />
+        <activity android:name=".LoginActivity" android:exported="false" />
+        <activity android:name=".SignupActivity" android:exported="false" />
+        <activity android:name=".DashboardActivity" android:exported="false" />
+        <activity android:name=".TrackResultActivity" android:exported="false" />
+        <activity android:name=".BookSenderActivity" android:exported="false" />
+        <activity android:name=".BookReceiverActivity" android:exported="false" />
+        <activity android:name=".BookPackageActivity" android:exported="false" />
+        <activity android:name=".BookConfirmationActivity" android:exported="false" />
+        <activity android:name=".StaffActivity" android:exported="false" />
+        <activity android:name=".SuperAdminActivity" android:exported="false" />
+        <activity android:name=".AdminActivity" android:exported="false" />
+        <activity android:name=".BranchStaffActivity" android:exported="false" />
+        <activity android:name=".RiderActivity" android:exported="false" />
 
     </application>
 

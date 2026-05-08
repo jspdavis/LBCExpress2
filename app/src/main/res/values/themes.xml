@@ -1,36 +1,9 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
-    <!-- Base application theme. -->
     <style name="Base.Theme.LBCExpress3" parent="Theme.Material3.DayNight.NoActionBar">
         <item name="colorPrimary">@color/lbc_red</item>
         <item name="colorPrimaryDark">@color/lbc_red_dark</item>
-        <item name="colorAccent">@color/lbc_yellow</item>
+        <item name="colorAccent">@color/lbc_red</item>
         <item name="android:windowBackground">@color/lbc_bg</item>
     </style>
-
     <style name="Theme.LBCExpress3" parent="Base.Theme.LBCExpress3" />
-
-    <style name="LBCToolbar" parent="Widget.AppCompat.Toolbar">
-        <item name="android:background">@color/lbc_red</item>
-        <item name="titleTextColor">@color/white</item>
-        <item name="subtitleTextColor">@color/white</item>
-    </style>
-
-    <style name="CardStyle" parent="Widget.MaterialComponents.CardView">
-        <item name="cardElevation">4dp</item>
-        <item name="cardCornerRadius">8dp</item>
-        <item name="cardBackgroundColor">@color/lbc_card_bg</item>
-    </style>
-
-    <style name="TrackButton" parent="Widget.MaterialComponents.Button">
-        <item name="android:background">@color/lbc_yellow</item>
-        <item name="android:textColor">@color/lbc_text_primary</item>
-        <item name="android:textStyle">bold</item>
-        <item name="cornerRadius">4dp</item>
-    </style>
-
-    <style name="SectionTitle">
-        <item name="android:textSize">16sp</item>
-        <item name="android:textStyle">bold</item>
-        <item name="android:textColor">@color/lbc_text_primary</item>
-    </style>
 </resources>

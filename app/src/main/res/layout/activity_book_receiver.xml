@@ -1,0 +1,375 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/lbc_bg"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/lbc_red"
+        android:elevation="4dp"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:padding="12dp">
+
+        <ImageButton
+            android:id="@+id/tvBack"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_marginEnd="4dp"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:contentDescription="Back"
+            android:src="@drawable/ic_arrow_back"
+            android:tint="@color/white" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="LBC"
+            android:textColor="@color/white"
+            android:textSize="18sp"
+            android:textStyle="bold" />
+
+    </LinearLayout>
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="16dp">
+
+            <!-- Step indicator -->
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="16dp"
+                app:cardCornerRadius="8dp"
+                app:cardElevation="2dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal"
+                    android:padding="12dp">
+
+                    <TextView
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:background="@drawable/step_done"
+                        android:gravity="center"
+                        android:text="✓"
+                        android:textColor="@color/white"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:background="@drawable/step_active"
+                        android:gravity="center"
+                        android:layout_marginStart="4dp"
+                        android:text="2"
+                        android:textColor="@color/white"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="8dp"
+                        android:layout_weight="1"
+                        android:text="Receiver Information"
+                        android:textColor="@color/lbc_text_primary"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:background="@drawable/step_inactive"
+                        android:gravity="center"
+                        android:layout_marginEnd="4dp"
+                        android:text="3"
+                        android:textColor="@color/lbc_gray"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:background="@drawable/step_inactive"
+                        android:gravity="center"
+                        android:text="4"
+                        android:textColor="@color/lbc_gray"
+                        android:textStyle="bold" />
+
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <!-- Form Card -->
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:cardCornerRadius="8dp"
+                app:cardElevation="3dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="16dp">
+
+                    <!-- Delivery Method -->
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="12dp"
+                        android:text="Delivery Method *"
+                        android:textColor="@color/lbc_text_primary"
+                        android:textSize="15sp"
+                        android:textStyle="bold" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="16dp"
+                        android:orientation="horizontal">
+
+                        <LinearLayout
+                            android:id="@+id/optBranchPickup"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginEnd="8dp"
+                            android:layout_weight="1"
+                            android:background="@drawable/delivery_option_selected"
+                            android:gravity="center"
+                            android:orientation="vertical"
+                            android:padding="14dp">
+
+                            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                                android:text="🏪" android:textSize="24sp" />
+                            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                                android:layout_marginTop="4dp" android:text="Branch Pick Up"
+                                android:textColor="@color/lbc_text_primary" android:textSize="12sp"
+                                android:textStyle="bold" android:gravity="center"/>
+                            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                                android:text="Receiver picks up at an LBC branch"
+                                android:textColor="@color/lbc_text_secondary" android:textSize="10sp"
+                                android:gravity="center"/>
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:id="@+id/optRiderDelivery"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:background="@drawable/delivery_option_normal"
+                            android:gravity="center"
+                            android:orientation="vertical"
+                            android:padding="14dp">
+
+                            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                                android:text="🛵" android:textSize="24sp" />
+                            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                                android:layout_marginTop="4dp" android:text="Rider Delivery"
+                                android:textColor="@color/lbc_text_primary" android:textSize="12sp"
+                                android:textStyle="bold" android:gravity="center"/>
+                            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                                android:text="Delivered to receiver's address"
+                                android:textColor="@color/lbc_text_secondary" android:textSize="10sp"
+                                android:gravity="center"/>
+                        </LinearLayout>
+
+                    </LinearLayout>
+
+                    <View android:layout_width="match_parent" android:layout_height="1dp"
+                        android:background="@color/lbc_divider" android:layout_marginBottom="16dp"/>
+
+                    <!-- Receiver Details -->
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="12dp"
+                        android:text="Receiver Details"
+                        android:textColor="@color/lbc_text_primary"
+                        android:textSize="15sp"
+                        android:textStyle="bold" />
+
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                        android:text="First Name *" android:textColor="@color/lbc_text_secondary"
+                        android:textSize="12sp" android:textStyle="bold" android:layout_marginBottom="4dp"/>
+                    <com.google.android.material.textfield.TextInputLayout
+                        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                        android:layout_width="match_parent" android:layout_height="wrap_content"
+                        android:layout_marginBottom="12dp" app:boxStrokeColor="@color/lbc_red">
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/etRFirstName"
+                            android:layout_width="match_parent" android:layout_height="wrap_content"
+                            android:inputType="textPersonName" android:maxLines="1"/>
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                        android:text="Last Name *" android:textColor="@color/lbc_text_secondary"
+                        android:textSize="12sp" android:textStyle="bold" android:layout_marginBottom="4dp"/>
+                    <com.google.android.material.textfield.TextInputLayout
+                        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                        android:layout_width="match_parent" android:layout_height="wrap_content"
+                        android:layout_marginBottom="12dp" app:boxStrokeColor="@color/lbc_red">
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/etRLastName"
+                            android:layout_width="match_parent" android:layout_height="wrap_content"
+                            android:inputType="textPersonName" android:maxLines="1"/>
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                        android:text="Phone Number *" android:textColor="@color/lbc_text_secondary"
+                        android:textSize="12sp" android:textStyle="bold" android:layout_marginBottom="4dp"/>
+                    <com.google.android.material.textfield.TextInputLayout
+                        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                        android:layout_width="match_parent" android:layout_height="wrap_content"
+                        android:layout_marginBottom="16dp" app:boxStrokeColor="@color/lbc_red"
+                        app:prefixText="+63 ">
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/etRPhone"
+                            android:layout_width="match_parent" android:layout_height="wrap_content"
+                            android:hint="9XXXXXXXXX" android:inputType="phone" android:maxLines="1"/>
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <!-- Branch Pick Up section -->
+                    <LinearLayout
+                        android:id="@+id/sectionBranchPickup"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                            android:text="Pick Up Branch" android:textColor="@color/lbc_text_primary"
+                            android:textSize="14sp" android:textStyle="bold"
+                            android:layout_marginBottom="12dp" android:layout_marginTop="4dp"/>
+
+                        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                            android:text="Province *" android:textColor="@color/lbc_text_secondary"
+                            android:textSize="12sp" android:textStyle="bold" android:layout_marginBottom="4dp"/>
+                        <Spinner android:id="@+id/spinnerRProvince"
+                            android:layout_width="match_parent" android:layout_height="48dp"
+                            android:layout_marginBottom="12dp" android:background="@drawable/spinner_bg"
+                            android:paddingStart="12dp" android:paddingEnd="12dp"/>
+
+                        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                            android:text="City/Municipality *" android:textColor="@color/lbc_text_secondary"
+                            android:textSize="12sp" android:textStyle="bold" android:layout_marginBottom="4dp"/>
+                        <Spinner android:id="@+id/spinnerRCity"
+                            android:layout_width="match_parent" android:layout_height="48dp"
+                            android:layout_marginBottom="12dp" android:background="@drawable/spinner_bg"
+                            android:paddingStart="12dp" android:paddingEnd="12dp"/>
+
+                        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                            android:text="Branch *" android:textColor="@color/lbc_text_secondary"
+                            android:textSize="12sp" android:textStyle="bold" android:layout_marginBottom="4dp"/>
+                        <Spinner android:id="@+id/spinnerRBranch"
+                            android:layout_width="match_parent" android:layout_height="48dp"
+                            android:layout_marginBottom="16dp" android:background="@drawable/spinner_bg"
+                            android:paddingStart="12dp" android:paddingEnd="12dp"/>
+
+                    </LinearLayout>
+
+                    <!-- Rider Delivery section -->
+                    <LinearLayout
+                        android:id="@+id/sectionRiderDelivery"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:visibility="gone">
+
+                        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                            android:text="Delivery Address" android:textColor="@color/lbc_text_primary"
+                            android:textSize="14sp" android:textStyle="bold"
+                            android:layout_marginBottom="12dp" android:layout_marginTop="4dp"/>
+
+                        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                            android:text="Street / Barangay *" android:textColor="@color/lbc_text_secondary"
+                            android:textSize="12sp" android:textStyle="bold" android:layout_marginBottom="4dp"/>
+                        <com.google.android.material.textfield.TextInputLayout
+                            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                            android:layout_width="match_parent" android:layout_height="wrap_content"
+                            android:layout_marginBottom="12dp" app:boxStrokeColor="@color/lbc_red">
+                            <com.google.android.material.textfield.TextInputEditText
+                                android:id="@+id/etStreet"
+                                android:layout_width="match_parent" android:layout_height="wrap_content"
+                                android:hint="e.g. 123 Rizal St., Brgy. San Antonio"
+                                android:inputType="textPostalAddress" android:maxLines="1"/>
+                        </com.google.android.material.textfield.TextInputLayout>
+
+                        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                            android:text="Province *" android:textColor="@color/lbc_text_secondary"
+                            android:textSize="12sp" android:textStyle="bold" android:layout_marginBottom="4dp"/>
+                        <Spinner android:id="@+id/spinnerDelProvince"
+                            android:layout_width="match_parent" android:layout_height="48dp"
+                            android:layout_marginBottom="12dp" android:background="@drawable/spinner_bg"
+                            android:paddingStart="12dp" android:paddingEnd="12dp"/>
+
+                        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                            android:text="City/Municipality *" android:textColor="@color/lbc_text_secondary"
+                            android:textSize="12sp" android:textStyle="bold" android:layout_marginBottom="4dp"/>
+                        <Spinner android:id="@+id/spinnerDelCity"
+                            android:layout_width="match_parent" android:layout_height="48dp"
+                            android:layout_marginBottom="12dp" android:background="@drawable/spinner_bg"
+                            android:paddingStart="12dp" android:paddingEnd="12dp"/>
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="16dp"
+                            android:background="@drawable/bg_warning"
+                            android:padding="10dp"
+                            android:text="🛵 A rider will be assigned to deliver to this address. Additional delivery fee may apply."
+                            android:textColor="#856404"
+                            android:textSize="12sp" />
+
+                    </LinearLayout>
+
+                    <!-- Back / Next buttons -->
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <com.google.android.material.button.MaterialButton
+                            android:id="@+id/btnBack"
+                            style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginEnd="8dp"
+                            android:layout_weight="1"
+                            android:padding="14dp"
+                            android:text="Back"
+                            android:textColor="@color/lbc_red"
+                            app:cornerRadius="8dp"
+                            app:strokeColor="@color/lbc_red" />
+
+                        <com.google.android.material.button.MaterialButton
+                            android:id="@+id/btnNext"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:backgroundTint="@color/lbc_red"
+                            android:padding="14dp"
+                            android:text="Next"
+                            android:textColor="@color/white"
+                            android:textStyle="bold"
+                            app:cornerRadius="8dp" />
+
+                    </LinearLayout>
+
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+
+</LinearLayout>
