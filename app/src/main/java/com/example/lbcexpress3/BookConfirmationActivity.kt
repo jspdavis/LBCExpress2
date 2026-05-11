@@ -47,9 +47,29 @@ class BookConfirmationActivity : AppCompatActivity() {
                 "Estimated delivery is 3-6 days from actual pick up."
         }
 
-        // Package + fees
+        // Package + fees — dynamic calculation matching book_confirmation.php
         val itemVal = d.itemValue.toDoubleOrNull() ?: 0.0
-        val shippingFee = 155.00
+        val pkg = d.packageType
+        val baseFee = when {
+            pkg.contains("N-Pouch")        -> 80.0
+            pkg.contains("N-Pack Small")   -> 90.0
+            pkg.contains("N-Pack Large")   -> 130.0
+            pkg.contains("Kilobox Mini")   -> 90.0
+            pkg.contains("Kilobox Small")  -> 130.0
+            pkg.contains("Kilobox Slim")   -> 130.0
+            pkg.contains("Kilobox Medium") -> 320.0
+            pkg.contains("Kilobox Large")  -> 620.0
+            pkg.contains("Kilobox XL")     -> 1220.0
+            pkg.contains("Small Box")      -> 200.0
+            pkg.contains("Medium Box")     -> 350.0
+            pkg.contains("Large Box")      -> 550.0
+            pkg.contains("Balikbayan")     -> 1500.0
+            pkg.contains("Own Box")        -> 320.0
+            else                           -> 155.0
+        }
+        val rushMultiplier = if (d.leadTime == "Rush") 1.30 else 1.0
+        val riderSurcharge = if (d.deliveryMethod == "Rider Delivery") 50.0 else 0.0
+        val shippingFee = Math.round(baseFee * rushMultiplier * 100.0) / 100.0 + riderSurcharge
         val valuationFee = itemVal * 0.015
         val totalFee = shippingFee + valuationFee
         val fmt = NumberFormat.getNumberInstance(Locale.US).apply { minimumFractionDigits = 2; maximumFractionDigits = 2 }
@@ -57,6 +77,11 @@ class BookConfirmationActivity : AppCompatActivity() {
         findViewById<TextView>(R.id.tvItemName).text = d.itemName
         findViewById<TextView>(R.id.tvItemValue).text = "PHP ${fmt.format(itemVal)}"
         findViewById<TextView>(R.id.tvPackageType).text = d.packageType
+        val shippingLabel = buildString {
+            append(d.packageType.ifEmpty { "Standard" })
+            if (d.leadTime == "Rush") append(" · Rush +30%")
+            if (d.deliveryMethod == "Rider Delivery") append(" · Rider +₱50")
+        }
         findViewById<TextView>(R.id.tvShippingFee).text = "₱ ${fmt.format(shippingFee)}"
         findViewById<TextView>(R.id.tvValuationFee).text = "₱ ${fmt.format(valuationFee)}"
         findViewById<TextView>(R.id.tvTotalFee).text = "₱ ${fmt.format(totalFee)}"

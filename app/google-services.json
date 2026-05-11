@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "208434704344",
+    "project_id": "lbcexpress-45c83",
+    "storage_bucket": "lbcexpress-45c83.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:208434704344:android:b9ff8270c28cc2623d4cad",
+        "android_client_info": {
+          "package_name": "com.example.lbcexpress3"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA_dDjOUm16X2P0MZ6KmVjY0AhaMaXVVqo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
