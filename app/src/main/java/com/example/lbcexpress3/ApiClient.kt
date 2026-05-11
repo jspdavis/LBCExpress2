@@ -44,7 +44,13 @@ object ApiClient {
                 }
                 val response = conn.inputStream.bufferedReader().readText().trim()
                 conn.disconnect()
-                JSONObject(response)
+                Log.d("ApiClient", "GET $endpoint raw response: $response")
+                if (response.startsWith("{") || response.startsWith("[")) {
+                    JSONObject(response)
+                } else {
+                    Log.e("ApiClient", "GET $endpoint non-JSON response: $response")
+                    JSONObject().put("ok", false).put("error", "Server error: unexpected response from server.")
+                }
             } catch (e: Exception) {
                 Log.e("ApiClient", "GET $endpoint error: ${e.message}")
                 JSONObject().put("ok", false).put("error", e.message ?: "Network error")
@@ -71,7 +77,13 @@ object ApiClient {
                 val stream = if (conn.responseCode in 200..299) conn.inputStream else conn.errorStream
                 val response = BufferedReader(InputStreamReader(stream)).readText().trim()
                 conn.disconnect()
-                JSONObject(response)
+                Log.d("ApiClient", "POST $endpoint raw response: $response")
+                if (response.startsWith("{") || response.startsWith("[")) {
+                    JSONObject(response)
+                } else {
+                    Log.e("ApiClient", "POST $endpoint non-JSON response: $response")
+                    JSONObject().put("ok", false).put("error", "Server error: unexpected response from server.")
+                }
             } catch (e: Exception) {
                 Log.e("ApiClient", "POST $endpoint error: ${e.message}")
                 JSONObject().put("ok", false).put("error", e.message ?: "Network error")
